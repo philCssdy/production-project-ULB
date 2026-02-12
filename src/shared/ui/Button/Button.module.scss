@@ -1,0 +1,14 @@
+.button {
+  cursor: pointer;
+  color: var(--primary);
+  svg {
+    pointer-events: none;
+  }
+}
+
+.clear {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+}
