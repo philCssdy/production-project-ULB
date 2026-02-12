@@ -12,6 +12,9 @@
     "moduleResolution": "node",
     // для абсолютного ипорта (может и не пригодится vsсправляется сам)
     "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
 
     // esModuleInterop позваляет работать с пакетами которые использует
     // comon js как с обычными пакетами так и с помощью ipmort (require() module.export = > common js)

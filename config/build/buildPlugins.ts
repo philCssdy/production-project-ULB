@@ -1,9 +1,5 @@
-// const path = require('path')
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const webpack = require("webpack")
-
-import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
