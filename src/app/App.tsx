@@ -6,29 +6,19 @@ import { useTheme } from "./providers/ThemeProvider";
 import { Sidebar } from "widgets/Sidebar";
 import { Suspense } from "react";
 
-//Другой вариант
-// const router = createBrowserRouter([
-//   { path: "/about", element: <AboutPage /> },
-//   { path: "/", element: <MainPage /> },
-// ]);
-
-// function App() {
-//   return <RouterProvider router={router} />;}
-
 const App = () => {
-  const { theme } = useTheme();
-  return (
-    <div className={classNames("app", {}, [theme])}>
-      <Suspense fallback="">
-        <Navbar />
-
-        <div className="content-page">
-          <Sidebar />
-          <AppRouter />
+    const { theme } = useTheme();
+    return (
+        <div className={classNames("app", {}, [theme])}>
+            <Suspense fallback="">
+                <Navbar />
+                <div className="content-page">
+                    <Sidebar />
+                    <AppRouter />
+                </div>
+            </Suspense>
         </div>
-      </Suspense>
-    </div>
-  );
+    );
 };
 
 export default App;

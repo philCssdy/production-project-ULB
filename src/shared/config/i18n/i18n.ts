@@ -4,23 +4,23 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
 i18next
-  .use(Backend)
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    fallbackLng: "ru",
-    debug: __IS_DEV__,
+    .use(Backend)
+    .use(LanguageDetector)
+    .use(initReactI18next)
+    .init({
+        fallbackLng: "ru",
+        debug: __IS_DEV__,
 
-    ns: ["translation"],
-    defaultNS: "translation",
+        ns: ["translation"],
+        defaultNS: "translation",
 
-    backend: {
-      loadPath: "/locales/{{lng}}/{{ns}}.json",
-    },
+        backend: {
+            loadPath: "/locales/{{lng}}/{{ns}}.json",
+        },
 
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+        interpolation: {
+            escapeValue: false,
+        },
+    });
 
 export default i18next;

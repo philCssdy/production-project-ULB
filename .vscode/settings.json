@@ -8,5 +8,9 @@
   "javascript.inlayHints.parameterTypes.enabled": true,
   "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
   "javascript.inlayHints.variableTypes.enabled": true,
-  "typescript.inlayHints.enumMemberValues.enabled": false
+  "typescript.inlayHints.enumMemberValues.enabled": false,
+  "eslint.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
