@@ -21,11 +21,14 @@
 
     //allowSyntheticDefaultImports ипорты без * as (просто писать как обычные импорты)
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "types": ["jest"],
+
   },
   "ts-node": {
     "compilerOptions": {
       "module": "Commonjs"
     }
   }
+  
 }
