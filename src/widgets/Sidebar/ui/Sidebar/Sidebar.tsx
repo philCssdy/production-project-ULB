@@ -7,7 +7,7 @@ import { LangSwitcher } from "shared/ui/LangSwitcher/LangSwitcher";
 interface SidebarProps {
   className?: string;
 }
-console.log(cls);
+//console.log(cls);
 
 export const Sidebar = ({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);

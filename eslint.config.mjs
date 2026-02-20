@@ -39,7 +39,8 @@ export default defineConfig([
             'no-shadow': 'off',
             '@typescript-eslint/no-shadow': 'error',
             'import/extensions': 'off',
-            "i18next/no-literal-string": ["warn", { "markupOnly": true, "ignoreAttribute": ["data-testid", "to"] }]
+            "i18next/no-literal-string": ["warn", { "markupOnly": true, "ignoreAttribute": ["data-testid", "to"] }],
+            'max-len':['error' , {ignorComments: true}],
         },
         settings: { react: { version: 'detect' } },
         env:{
