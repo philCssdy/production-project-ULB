@@ -1,34 +1,26 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    // необходимость явного указания типа (чтобы не было any, явно указать any можно)
     "noImplicitAny": true,
     "module": "ESNext",
-    // в какую спецификацию компилируем в es5
     "target": "ES5",
     "jsx": "react-jsx",
-    // копилирует не только ts файлы но и js
     "allowJs": true,
     "moduleResolution": "node",
-    // для абсолютного ипорта (может и не пригодится vsсправляется сам)
+
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "shared/*": ["src/shared/*"],
+      "widgets/*": ["src/widgets/*"],
+      "pages/*": ["src/pages/*"],
+      "entities/*": ["src/entities/*"],
+      "features/*": ["src/features/*"]
     },
 
-    // esModuleInterop позваляет работать с пакетами которые использует
-    // comon js как с обычными пакетами так и с помощью ipmort (require() module.export = > common js)
-
-    //allowSyntheticDefaultImports ипорты без * as (просто писать как обычные импорты)
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["jest"],
-
+    "types": ["jest", "@testing-library/jest-dom"]
   },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "Commonjs"
-    }
-  }
-  
+
+  "include": ["src", ".config"]
 }
