@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from "eslint-plugin-storybook";
+
 import js from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -40,13 +43,22 @@ export default defineConfig([
             '@typescript-eslint/no-shadow': 'error',
             'import/extensions': 'off',
             "i18next/no-literal-string": ["warn", { "markupOnly": true, "ignoreAttribute": ["data-testid", "to"] }],
-            'max-len':['error' , {ignorComments: true}],
+            'max-len': ['error', { ignorComments: true }],
         },
         settings: { react: { version: 'detect' } },
-        env:{
+        env: {
             browser: true,
             es2021: true,
             jest: true
-        }
+        },
+        overrides: [
+            {
+                files: ['**/src/**/*.test.{ts, tsx}'],
+                rules: {
+                    "i18next/no-literal-string": "off",
+                }
+            }
+        ]
     },
+    ...storybook.configs["flat/recommended"]
 ]);

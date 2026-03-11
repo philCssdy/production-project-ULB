@@ -6,6 +6,7 @@ export enum ThemeButton {
   CLEAR = "clear",
   DARK = "dark",
   LIGHT = "light",
+  OUTLINE = "outline",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -14,13 +15,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = (props: ButtonProps) => {
-    const { className, theme, children, ...otherProps } = props;
-    return (
-        <button type='button'
-            className={classNames(cls.button, { [cls[theme]]: true }, [className])}
-            {...otherProps}
-        >
-            {children}
-        </button>
-    );
+  const { className, theme, children, ...otherProps } = props;
+  return (
+    <button
+      type="button"
+      className={classNames(cls.button, { [cls[theme]]: true }, [className])}
+      {...otherProps}
+    >
+      {children}
+    </button>
+  );
 };

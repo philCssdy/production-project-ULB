@@ -10,7 +10,9 @@
     "lint:scss:fix": "stylelint \"**/*.scss\" --fix",
     "lint:ts": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:ts:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts"
+    "unit": "jest --config ./config/jest/jest.config.ts",
+    "storybook": "storybook dev -p 6006 -c ./config/storybook",
+    "build-storybook": "storybook build -c ./config/storybook"
   },
   "keywords": [],
   "author": "",
@@ -64,7 +66,14 @@
     "webpack": "^5.103.0",
     "webpack-bundle-analyzer": "^5.2.0",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2"
+    "webpack-dev-server": "^5.2.2",
+    "storybook": "^10.2.14",
+    "@storybook/react-webpack5": "^10.2.14",
+    "@storybook/addon-webpack5-compiler-swc": "^4.0.2",
+    "@storybook/addon-a11y": "^10.2.14",
+    "@storybook/addon-docs": "^10.2.14",
+    "@storybook/addon-onboarding": "^10.2.14",
+    "eslint-plugin-storybook": "^10.2.14"
   },
   "dependencies": {
     "@babel/preset-react": "^7.28.5",

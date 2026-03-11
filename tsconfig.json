@@ -6,21 +6,20 @@
     "target": "ES5",
     "jsx": "react-jsx",
     "allowJs": true,
-    "moduleResolution": "node",
-
-    "baseUrl": ".",
+    "moduleResolution": "bundler",
+    "baseUrl": "src",
     "paths": {
-      "shared/*": ["src/shared/*"],
-      "widgets/*": ["src/widgets/*"],
-      "pages/*": ["src/pages/*"],
-      "entities/*": ["src/entities/*"],
-      "features/*": ["src/features/*"]
+      "app/*": ["app/*"],
+      "shared/*": ["shared/*"]
     },
-
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "types": ["jest", "@testing-library/jest-dom"]
   },
-
-  "include": ["src", ".config"]
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["./config/jest/setupTests.ts", "./src/**/*.ts", "./src/**/*.tsx"]
 }
