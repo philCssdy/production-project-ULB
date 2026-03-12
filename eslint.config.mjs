@@ -13,6 +13,7 @@ export default defineConfig([
     js.configs.recommended,
     ...tseslint.configs.recommended,
     react.configs.flat.recommended,
+
     {
         files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
         languageOptions: {
@@ -21,7 +22,9 @@ export default defineConfig([
                 ...globals.es2021,
                 ...globals.jest
             },
-            parserOptions: { project: './tsconfig.json' },
+            parserOptions: {
+                projectService: true // FIX: быстрее чем project: './tsconfig.json'
+            },
         },
 
         plugins: {
@@ -37,30 +40,40 @@ export default defineConfig([
             'react/jsx-indent': [2, 4],
             'react/jsx-indent-props': [2, 4],
             'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+
             'react-hooks/rules-of-hooks': 'error',
             'react-hooks/exhaustive-deps': 'warn',
+
             'import/no-unresolved': 'off',
             'import/prefer-default-export': 'off',
+
             indent: [2, 4],
+
             'no-unused-vars': 'off',
             '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+
             'no-shadow': 'off',
             '@typescript-eslint/no-shadow': 'error',
+
             'import/extensions': 'off',
-            "i18next/no-literal-string": ["warn", { "markupOnly": true, "ignoreAttribute": ["data-testid", "to"] }],
-            'max-len': ['error', { ignoreComments: true }],
+
+            "i18next/no-literal-string": [
+                "warn",
+                { markupOnly: true, ignoreAttribute: ["data-testid", "to"] }
+            ],
+
+            'max-len': ['error', { code: 120, ignoreComments: true }], // FIX: добавлен лимит 120
         },
 
-        settings: { react: { version: 'detect' } },
-
-        overrides: [
-            {
-                files: ['**/src/**/*.test.{ts, tsx}'],
-                rules: {
-                    "i18next/no-literal-string": "off",
-                }
-            }
-        ]
+        settings: { react: { version: 'detect' } }
     },
+
+    {
+        files: ['**/*.{test,spec}.{ts,tsx}'], // FIX: поддержка test + spec
+        rules: {
+            "i18next/no-literal-string": "off"
+        }
+    },
+
     ...storybook.configs["flat/recommended"]
 ]);
