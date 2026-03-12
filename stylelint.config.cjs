@@ -1,8 +1,9 @@
-// @ts-nocheck
 /** @type {import('stylelint').Config} */
-module.exports = {
+const config = {
     extends: ["stylelint-config-standard-scss"],
     rules: {
         "selector-class-pattern": null
     }
-}; 
+};
+
+export default config; 
