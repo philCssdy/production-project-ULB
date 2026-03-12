@@ -1,46 +1,21 @@
-/**
- * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/configuration
- */
-
 import type { Config } from "jest";
 import path from "path";
 
 const config: Config = {
+  preset: "ts-jest",
   clearMocks: true,
   testEnvironment: "jsdom",
-  coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
-
+  rootDir: "./",
   moduleDirectories: ["node_modules"],
-  modulePaths: ["<rootDir>/src"], // добавлен слэш после <rootDir>
-
-  moduleFileExtensions: [
-    "js",
-    "mjs",
-    "cjs",
-    "jsx",
-    "ts",
-    "mts",
-    "cts",
-    "tsx",
-    "json",
-    "node",
-  ],
-
-  rootDir: "../../",
-
-  // исправлен путь: добавлен слэш после <rootDir>
+  modulePaths: ["<rootDir>/src"],
+  moduleFileExtensions: ["js","ts","tsx","json","node","jsx"],
   setupFilesAfterEnv: ["<rootDir>/config/jest/setupTest.ts"],
-
   testMatch: ["<rootDir>/src/**/*(*.)+(spec|test).[tj]s?(x)"],
-
   moduleNameMapper: {
     "\\.(s?css|less)$": "identity-obj-proxy",
     "\\.svg$": path.resolve(__dirname, "jestEmptyComponent.tsx"),
   },
-
-  // Чтобы Jest корректно работал с TypeScript
-  preset: "ts-jest",
+  coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
 };
 
 export default config;
