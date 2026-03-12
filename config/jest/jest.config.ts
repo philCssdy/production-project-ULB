@@ -6,8 +6,7 @@ const config: Config = {
   clearMocks: true,
   testEnvironment: "jsdom",
 
-
-  rootDir: "./",
+  rootDir: "../../", // указываем на корень проекта
 
   moduleDirectories: ["node_modules"],
   modulePaths: ["<rootDir>/src"],
@@ -21,15 +20,12 @@ const config: Config = {
     "node",
   ],
 
-  
   setupFilesAfterEnv: ["<rootDir>/config/jest/setupTest.ts"],
 
   testMatch: ["<rootDir>/src/**/*(*.)+(spec|test).[tj]s?(x)"],
 
   moduleNameMapper: {
     "\\.(s?css|less)$": "identity-obj-proxy",
-
-  
     "\\.svg$": path.resolve(__dirname, "jestEmptyComponent.tsx"),
   },
 
