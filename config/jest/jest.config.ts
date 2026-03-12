@@ -5,7 +5,7 @@ const config: Config = {
   preset: "ts-jest",
   clearMocks: true,
   testEnvironment: "jsdom",
-  rootDir: "./",
+  rootDir: "../../",
   moduleDirectories: ["node_modules"],
   modulePaths: ["<rootDir>/src"],
   moduleFileExtensions: ["js","ts","tsx","json","node","jsx"],
