@@ -11,31 +11,31 @@ interface SidebarProps {
 //console.log(cls);
 
 export const Sidebar = ({ className }: SidebarProps) => {
-  const [collapsed, setCollapsed] = useState(false);
-  const ontoggle = () => {
-    setCollapsed((prev) => !prev);
-  };
-  return (
-    <div
-      data-testid="sidebar"
-      className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
-        className,
-      ])}
-    >
-      <Button
-        data-testid="sidebar-toggle"
-        onClick={ontoggle}
-        className={cls.collapseBtn}
-        theme={ButtonTheme.BACKGROUND_INVERTED}
-        square
-        size={ButtonSize.XL}
-      >
-        {collapsed ? ">" : "<"}
-      </Button>
-      <div className={cls.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher className={cls.lang} />
-      </div>
-    </div>
-  );
+    const [collapsed, setCollapsed] = useState(false);
+    const ontoggle = () => {
+        setCollapsed((prev) => !prev);
+    };
+    return (
+        <div
+            data-testid="sidebar"
+            className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
+                className,
+            ])}
+        >
+            <Button
+                data-testid="sidebar-toggle"
+                onClick={ontoggle}
+                className={cls.collapseBtn}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
+                square
+                size={ButtonSize.XL}
+            >
+                {collapsed ? ">" : "<"}
+            </Button>
+            <div className={cls.switchers}>
+                <ThemeSwitcher />
+                <LangSwitcher className={cls.lang} />
+            </div>
+        </div>
+    );
 };

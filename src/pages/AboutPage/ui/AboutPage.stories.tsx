@@ -5,9 +5,9 @@ import { Theme } from "app/providers/ThemeProvider";
 import AboutPage from "./AboutPage";
 
 const meta: Meta<typeof AboutPage> = {
-  title: "pages/AboutPage",
-  component: AboutPage,
-  args: {},
+    title: "pages/AboutPage",
+    component: AboutPage,
+    args: {},
 };
 
 export default meta;
@@ -15,10 +15,10 @@ export default meta;
 type Story = StoryObj<typeof AboutPage>;
 
 export const Light: Story = {
-  args: {},
+    args: {},
 };
 export const Dark: Story = {
-  args: {},
+    args: {},
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

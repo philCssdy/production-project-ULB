@@ -5,17 +5,17 @@ import { useTranslation } from "react-i18next";
 //Компонент для Тестировния ErrorBoundaries
 
 export const BugButton = () => {
-  const [error, setError] = useState(false);
-  const { t } = useTranslation();
-  const onThorow = () => {
-    setError(true);
-  };
+    const [error, setError] = useState(false);
+    const { t } = useTranslation();
+    const onThorow = () => {
+        setError(true);
+    };
 
-  useEffect(() => {
-    if (error) {
-      throw new Error();
-    }
-  }, [error]);
+    useEffect(() => {
+        if (error) {
+            throw new Error();
+        }
+    }, [error]);
 
-  return <Button onClick={onThorow}> {t("Throw error")}</Button>;
+    return <Button onClick={onThorow}> {t("Throw error")}</Button>;
 };

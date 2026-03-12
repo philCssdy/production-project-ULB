@@ -9,11 +9,11 @@ import { ErrorBoundary } from "app/providers/ErrorBoundaries";
 const root = createRoot(document.getElementById("root"));
 
 root.render(
-  <BrowserRouter>
-    <ErrorBoundary>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </ErrorBoundary>
-  </BrowserRouter>
+    <BrowserRouter>
+        <ErrorBoundary>
+            <ThemeProvider>
+                <App />
+            </ThemeProvider>
+        </ErrorBoundary>
+    </BrowserRouter>
 );

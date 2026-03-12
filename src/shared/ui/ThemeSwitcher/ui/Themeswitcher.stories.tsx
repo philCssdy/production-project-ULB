@@ -5,9 +5,9 @@ import { Theme } from "app/providers/ThemeProvider";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const meta: Meta<typeof ThemeSwitcher> = {
-  title: "shared/ThemeSwitcher",
-  component: ThemeSwitcher,
-  args: {},
+    title: "shared/ThemeSwitcher",
+    component: ThemeSwitcher,
+    args: {},
 };
 
 export default meta;
@@ -15,10 +15,10 @@ export default meta;
 type Story = StoryObj<typeof ThemeSwitcher>;
 
 export const Light: Story = {
-  args: {},
+    args: {},
 };
 export const Dark: Story = {
-  args: {},
+    args: {},
 };
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
