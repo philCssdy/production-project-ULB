@@ -20,3 +20,15 @@
   color: var(--primary-color);
   background: none;
 }
+
+.bacground {
+  background: var(--bg-color);
+  color: var(--primary-color);
+  border: none;
+}
+
+.backgroundinverted {
+  background: var(--inverted-bg-color);
+  color: var(--inverted-primary-color);
+  border: none;
+}

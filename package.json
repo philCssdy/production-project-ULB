@@ -10,9 +10,9 @@
     "lint:scss:fix": "stylelint \"**/*.scss\" --fix",
     "lint:ts": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:ts:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "build-storybook": "storybook build -c ./config/storybook"
+    "storybook:build": "storybook build -c ./config/storybook"
   },
   "keywords": [],
   "author": "",
