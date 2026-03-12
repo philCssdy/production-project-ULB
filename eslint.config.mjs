@@ -1,4 +1,3 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
 import storybook from "eslint-plugin-storybook";
 
 import js from '@eslint/js';
@@ -17,15 +16,21 @@ export default defineConfig([
     {
         files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
         languageOptions: {
-            globals: globals.browser,
+            globals: {
+                ...globals.browser,
+                ...globals.es2021,
+                ...globals.jest
+            },
             parserOptions: { project: './tsconfig.json' },
         },
+
         plugins: {
             react,
             'react-hooks': reactHooks,
             import: importPlugin,
             i18next
         },
+
         rules: {
             'react/react-in-jsx-scope': 'off',
             'react/require-default-props': 'off',
@@ -45,12 +50,9 @@ export default defineConfig([
             "i18next/no-literal-string": ["warn", { "markupOnly": true, "ignoreAttribute": ["data-testid", "to"] }],
             'max-len': ['error', { ignoreComments: true }],
         },
+
         settings: { react: { version: 'detect' } },
-        globals: {
-            browser: true,
-            es2021: true,
-            jest: true
-        },
+
         overrides: [
             {
                 files: ['**/src/**/*.test.{ts, tsx}'],
