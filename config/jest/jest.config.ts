@@ -5,16 +5,34 @@ const config: Config = {
   preset: "ts-jest",
   clearMocks: true,
   testEnvironment: "jsdom",
-  rootDir: "../../",
+
+
+  rootDir: "./",
+
   moduleDirectories: ["node_modules"],
   modulePaths: ["<rootDir>/src"],
-  moduleFileExtensions: ["js","ts","tsx","json","node","jsx"],
+
+  moduleFileExtensions: [
+    "js",
+    "ts",
+    "tsx",
+    "jsx",
+    "json",
+    "node",
+  ],
+
+  
   setupFilesAfterEnv: ["<rootDir>/config/jest/setupTest.ts"],
+
   testMatch: ["<rootDir>/src/**/*(*.)+(spec|test).[tj]s?(x)"],
+
   moduleNameMapper: {
     "\\.(s?css|less)$": "identity-obj-proxy",
+
+  
     "\\.svg$": path.resolve(__dirname, "jestEmptyComponent.tsx"),
   },
+
   coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
 };
 
