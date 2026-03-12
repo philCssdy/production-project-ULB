@@ -43,10 +43,10 @@ export default defineConfig([
             '@typescript-eslint/no-shadow': 'error',
             'import/extensions': 'off',
             "i18next/no-literal-string": ["warn", { "markupOnly": true, "ignoreAttribute": ["data-testid", "to"] }],
-            'max-len': ['error', { ignorComments: true }],
+            'max-len': ['error', { ignoreComments: true }],
         },
         settings: { react: { version: 'detect' } },
-        env: {
+        globals: {
             browser: true,
             es2021: true,
             jest: true
