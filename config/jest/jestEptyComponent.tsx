@@ -1,9 +1,4 @@
 import React from "react";
 
-const jestEptyComponent = function () {
-  return <svg />;
-};
-
-export default jestEptyComponent;
-
-
+const SvgMock: React.FC = () => <div data-testid="svg-mock" />;
+export default SvgMock;

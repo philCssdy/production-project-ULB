@@ -1,38 +1,40 @@
+// config/jest/jest.config.ts
 import type { Config } from "jest";
-
 
 const config: Config = {
   preset: "ts-jest",
-  clearMocks: true,
   testEnvironment: "jsdom",
+  clearMocks: true,
+  rootDir: "../../",
 
-  rootDir: "../../", // указываем на корень проекта
-
+  moduleFileExtensions: ["js", "ts", "tsx", "jsx", "json", "node"],
   moduleDirectories: ["node_modules"],
   modulePaths: ["<rootDir>/src"],
 
-  moduleFileExtensions: [
-    "js",
-    "ts",
-    "tsx",
-    "jsx",
-    "json",
-    "node",
-  ],
+  transform: {
+    "^.+\\.(ts|tsx)$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest",
+  },
+
+ 
 
   setupFilesAfterEnv: ["<rootDir>/config/jest/setupTest.ts"],
 
   testMatch: ["<rootDir>/src/**/*(*.)+(spec|test).[tj]s?(x)"],
 
+  coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
+  
   moduleNameMapper: {
     "^shared/(.*)$": "<rootDir>/src/shared/$1",
-    "^app/(.*)$": "<rootDir>/src/app/$1",
     "^widgets/(.*)$": "<rootDir>/src/widgets/$1",
-    "\\.(s?css|less)$": "identity-obj-proxy",
-    "\\.svg$": "<rootDir>/config/jest/jestEmptyComponent.tsx",
-  },
+    "^app/(.*)$": "<rootDir>/src/app/$1",
 
-  coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
+    // CSS Modules и обычные CSS/LESS
+    "\\.(s?css|less)$": "identity-obj-proxy",
+
+    // SVG моки
+    "\\.svg$": "<rootDir>/config/jest/jestEmptyComponent.tsx",
+  }
 };
 
-export default config;
+export default config;  

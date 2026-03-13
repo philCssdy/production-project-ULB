@@ -27,8 +27,8 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 onClick={ontoggle}
                 className={cls.collapseBtn}
                 theme={ButtonTheme.BACKGROUND_INVERTED}
+                size={ButtonSize.L}
                 square
-                size={ButtonSize.XL}
             >
                 {collapsed ? ">" : "<"}
             </Button>

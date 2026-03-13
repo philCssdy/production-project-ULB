@@ -12,9 +12,9 @@ export enum ButtonTheme {
 }
 
 export enum ButtonSize {
-  M = "size_s",
-  L = "size_l",
-  XL = "size_xl",
+  M = "sizeM",
+  L = "sizeL",
+  XL = "sizeXl",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -25,13 +25,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = (props: ButtonProps) => {
-    const { className, theme, children, square, size, ...otherProps } = props;
+    const { className, theme, children, square, size = ButtonSize.M, ...otherProps } = props;
 
     const mods: Record<string, boolean> = {
         [cls[theme]]: true,
         [cls.square]: square,
-        [cls.size]: true,
+        [cls[size]]: true,
     };
+
+    // console.log(cls)
 
     return (
         <button
