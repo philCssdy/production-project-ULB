@@ -1,5 +1,5 @@
 import type { Config } from "jest";
-import path from "path";
+
 
 const config: Config = {
   preset: "ts-jest",
@@ -25,8 +25,11 @@ const config: Config = {
   testMatch: ["<rootDir>/src/**/*(*.)+(spec|test).[tj]s?(x)"],
 
   moduleNameMapper: {
+    "^shared/(.*)$": "<rootDir>/src/shared/$1",
+    "^app/(.*)$": "<rootDir>/src/app/$1",
+    "^widgets/(.*)$": "<rootDir>/src/widgets/$1",
     "\\.(s?css|less)$": "identity-obj-proxy",
-    "\\.svg$": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+    "\\.svg$": "<rootDir>/config/jest/jestEmptyComponent.tsx",
   },
 
   coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],

@@ -1,7 +1,9 @@
 import React from "react";
 
 const jestEptyComponent = function () {
-  return <div></div>;
+  return <svg />;
 };
 
 export default jestEptyComponent;
+
+
