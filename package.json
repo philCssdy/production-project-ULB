@@ -8,7 +8,7 @@
     "build:dev": "webpack --env mode=development",
     "lint:scss": "stylelint \"**/*.scss\"",
     "lint:scss:fix": "stylelint \"**/*.scss\" --fix",
-    "lint:ts": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:ts": "eslint src --ext .js,.jsx,.ts,.tsx",
     "lint:ts:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
