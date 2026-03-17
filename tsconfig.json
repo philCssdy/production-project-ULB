@@ -22,11 +22,11 @@
     }
   },
   "include": [
-  "./config/jest/setupTests.ts",
-  "./src/**/*.ts",
-  "./src/**/*.tsx",
-  "./eslint.config.mjs",
-  "./stylelint.config.js"   // <-- добавили stylelint конфиг
-]
-
+    "./config/jest/setupTests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./eslint.config.mjs",
+    "stylelint.config.ts"   // ← теперь правильно!
+  ],
+  "exclude": ["node_modules", "dist"]
 }
