@@ -42,11 +42,13 @@
   height: var(--font-line-m);
   font-size: var(--font-m);
 }
+
 .square.size_l {
   width: var(--font-line-l);
   height: var(--font-line-l);
   font-size: var(--font-l);
 }
+
 .square.size_xl {
   width: var(--font-line-xl);
   height: var(--font-line-xl);
@@ -57,9 +59,11 @@
 .size_m {
   font-size: var(--font-m);
 }
+
 .size_l {
   font-size: var(--font-l);
 }
+
 .size_xl {
   font-size: var(--font-xl);
 }
