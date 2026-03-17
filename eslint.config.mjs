@@ -81,4 +81,10 @@ export default defineConfig([
     },
 
     ...storybook.configs["flat/recommended"],
+    {
+        files: ["**/*.stories.*", "**/storybook/**/*", "**/*Decorator.tsx"],
+        rules: {
+            "react/display-name": "off",
+        },
+    }
 ]);
