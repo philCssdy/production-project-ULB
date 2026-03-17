@@ -22,9 +22,11 @@
     }
   },
   "include": [
-    "./config/jest/setupTests.ts",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./eslint.config.mjs"   // <-- FIX: добавили ESLint конфиг
-  ]
+  "./config/jest/setupTests.ts",
+  "./src/**/*.ts",
+  "./src/**/*.tsx",
+  "./eslint.config.mjs",
+  "./stylelint.config.js"   // <-- добавили stylelint конфиг
+]
+
 }

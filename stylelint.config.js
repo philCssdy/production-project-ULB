@@ -5,5 +5,5 @@ const config = {
         "selector-class-pattern": null
     }
 };
-
-export default config; 
+  
+export default config;
