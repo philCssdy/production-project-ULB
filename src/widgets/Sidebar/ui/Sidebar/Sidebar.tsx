@@ -59,7 +59,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                     <AppLink 
                         theme={AppLinkTheme.SECONDARY} 
                         to={RoutePath.about}
-                        className={cls.item}
+                        className={cls.item} 
                     >
                         <AboutIcon className={cls.icon} />
                         <span  className={cls.link}>{t('О сайте')}</span>

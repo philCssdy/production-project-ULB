@@ -22,11 +22,16 @@ jobs:
     run: npm ci
   - name: build project
     run: npm run build:prod
+    if: always()
   - name: linting typescriptе
     run: npm run lint:ts
+    if: always()
   - name: linting scss
     run: npm run lint:scss
+    if: always()
   - name: unit testing  (SVG trouble)
     run: npm run test:unit
+    if: always()
   - name: build storybook
     run: npm run storybook:build
+    if: always()

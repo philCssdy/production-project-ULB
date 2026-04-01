@@ -13,7 +13,6 @@ export default defineConfig([
     ...tseslint.configs.recommended,
     react.configs.flat.recommended,
 
-
     {
         files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
         ignores: ["build/**", "config/**", "**/*.cjs"],
@@ -36,15 +35,13 @@ export default defineConfig([
         rules: {
             "react/react-in-jsx-scope": "off",
             "react/require-default-props": "off",
-            "react/jsx-indent": [2, 4],
-            "react/jsx-indent-props": [2, 4],
             "react/jsx-filename-extension": [
                 2,
                 { extensions: [".js", ".jsx", ".ts", ".tsx"] },
             ],
 
             "react-hooks/rules-of-hooks": "error",
-            "react-hooks/exhaustive-deps": "warn",
+            "react-hooks/exhaustive-deps": "error",
 
             "import/no-unresolved": "off",
             "import/prefer-default-export": "off",
@@ -72,7 +69,6 @@ export default defineConfig([
         settings: { react: { version: "detect" } },
     },
 
-
     {
         files: ["**/*.{test,spec}.{ts,tsx}"],
         rules: {
@@ -85,6 +81,7 @@ export default defineConfig([
         files: ["**/*.stories.*", "**/storybook/**/*", "**/*Decorator.tsx"],
         rules: {
             "react/display-name": "off",
+            "max-len": ["warn", { code: 160, ignoreComments: true }],
         },
-    }
+    },
 ]);

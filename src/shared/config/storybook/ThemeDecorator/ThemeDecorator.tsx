@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Decorator } from "@storybook/react";
-import { Theme } from "app/providers/ThemeProvider";
+import { Theme, ThemeProvider } from "app/providers/ThemeProvider";
 
 export const ThemeDecorator = (theme: Theme): Decorator => {
     const DecoratedStory = (Story: any) => (
-        <div className={`app ${theme}`}>
-            <Story />
-        </div>
+        <ThemeProvider initialTheme={theme}>
+            <div className={`app ${theme}`}>
+                <Story />
+            </div>
+        </ThemeProvider>
     );
 
     DecoratedStory.displayName = "ThemeDecorator";
